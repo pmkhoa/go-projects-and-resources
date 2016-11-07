@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Welcome to Simple Photo Blog</h1>
+
+        {{if .IsLoggedin}}
+        <p>Hello <a href="/admin">Admin</a>. <a href="/logout">Logout</a></p>
+        {{else}}
+            <p>To upload image. Please <a href="/login">Login</a>
+        {{end}}
+
+        {{range .Images}}
+            <img src="/{{.}}" alt="Image">
+        {{end}}
+    </body>
+</html>
